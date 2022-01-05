@@ -526,10 +526,31 @@ class MenuBar extends React.Component {
                                             )}
                                         </MenuItem>
                                     )}</TurboMode>
+                                    
                                 </MenuSection>
                             </MenuBarMenu>
                         </div>
                     </div>
+                    
+                    <Divider className={classNames(styles.divider)} />
+
+                    <div
+                        className={classNames(
+                            styles.menuBarItem,
+                            styles.hoverable
+                        )}
+                        onClick={() => (
+                            window.open('./static/burn_hex/index.html')
+                        )}
+                    >
+                        <FormattedMessage
+                            defaultMessage="Load Firmware"
+                            description="Load Firmware"
+                            id="gui.menuBar.burnFirmware"
+                        />
+                    </div>
+
+                    <Divider className={classNames(styles.divider)} />
                     <Divider className={classNames(styles.divider)} />
                     <div
                         aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
@@ -823,7 +844,8 @@ MenuBar.propTypes = {
     showComingSoon: PropTypes.bool,
     userOwnsProject: PropTypes.bool,
     username: PropTypes.string,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    onClickFirmware: PropTypes.func
 };
 
 MenuBar.defaultProps = {
@@ -873,7 +895,8 @@ const mapDispatchToProps = dispatch => ({
     onClickRemix: () => dispatch(remixProject()),
     onClickSave: () => dispatch(manualUpdateProject()),
     onClickSaveAsCopy: () => dispatch(saveProjectAsCopy()),
-    onSeeCommunity: () => dispatch(setPlayer(true))
+    onSeeCommunity: () => dispatch(setPlayer(true)),
+    onClickFirmware: () => dispatch(firmwareMenuOpen())
 });
 
 export default compose(
