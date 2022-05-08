@@ -608,7 +608,7 @@ class MenuBar extends React.Component {
                     >
                         <FormattedMessage
                             defaultMessage="燒錄 Arduino"
-                            description="Load Firmware Arduino"
+                            description="燒錄 Arduino"
                             id="gui.menuBar.burnFirmware_a"
                         />
                     </div>
@@ -622,7 +622,7 @@ class MenuBar extends React.Component {
                     >
                         <FormattedMessage
                             defaultMessage="燒錄 ESP"
-                            description="Load Firmware esp"
+                            description="燒錄 ESP"
                             id="gui.menuBar.burnFirmware_e"
                         />
                     </div>
