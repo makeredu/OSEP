@@ -147,7 +147,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
 var onClickLogo = function onClickLogo() {
-  window.location = 'https://sites.google.com/view/scratch-web-serial-api/';
+  window.open('https://sites.google.com/view/scminicourse/home');
 };
 
 var onClickFirmware = function onClickFirmware() {

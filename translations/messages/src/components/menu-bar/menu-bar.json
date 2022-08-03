@@ -76,12 +76,12 @@
   },
   {
     "id": "gui.menuBar.burnFirmware_a",
-    "description": "燒錄 Arduino",
+    "description": "Load Firmware Arduino",
     "defaultMessage": "燒錄 Arduino"
   },
   {
     "id": "gui.menuBar.burnFirmware_e",
-    "description": "燒錄 ESP",
+    "description": "Load Firmware esp",
     "defaultMessage": "燒錄 ESP"
   },
   {
