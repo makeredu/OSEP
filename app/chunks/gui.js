@@ -147,23 +147,23 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
 var onClickLogo = function onClickLogo() {
-  window.open("https://sites.google.com/view/scminicourse/home");
+  window.open('https://sites.google.com/view/scminicourse/home');
 };
 
 var onClickFirmware = function onClickFirmware() {
-  window.location = "https://estea8968.github.io/osep_web_serial/burn_hex/";
+  window.location = 'https://estea8968.github.io/osep_web_serial/burn_hex/';
 };
 
 var handleTelemetryModalCancel = function handleTelemetryModalCancel() {
-  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])("User canceled telemetry modal");
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])('User canceled telemetry modal');
 };
 
 var handleTelemetryModalOptIn = function handleTelemetryModalOptIn() {
-  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])("User opted into telemetry");
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])('User opted into telemetry');
 };
 
 var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
-  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])("User opted out of telemetry");
+  Object(_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])('User opted out of telemetry');
 };
 /*
  * Render the GUI playground. This is a separate function because importing anything
