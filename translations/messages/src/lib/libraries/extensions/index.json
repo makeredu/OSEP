@@ -183,10 +183,5 @@
     "id": "gui.extension.tm2scratchblocks.description",
     "description": "画像や音声を学習させよう。",
     "defaultMessage": "Machine learning for images and sound"
-  },
-  {
-    "id": "gui.extension.microbitMore.description",
-    "description": "Description for the 'Microbit More' extension",
-    "defaultMessage": "Play with all functions of micro:bit."
   }
 ]
