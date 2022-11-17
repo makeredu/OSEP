@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script>
+        var markerData = [
+            { label: '佛光大學', lat: 24.8162086, lng: 121.7237203 },
+            { label: '雲起樓', lat: 24.8161329, lng: 121.7223894 },
+            { label: '雲慧樓', lat: 24.8158753, lng: 121.7289251 },
+            { label: '滴水坊', lat: 24.815175, lng: 121.726861 },
+        ];
+
+        var map;
+        var marker = [];
+        var infoWindow = [];
+        var windowOpened;
+
+        function initMap() {
+            var target = document.getElementById('map');
+            var centerp = { lat: 24.8162086, lng: 121.7237203 };
+
+            map = new google.maps.Map(target, {
+                center: centerp,
+                zoom: 15,
+            });
+
+            var sidebar_html = "";
+
+            for (var i = 0; i < markerData.length; i++) {
+                var latitude = markerData[i].lat;
+                if (!latitude) { continue; }
+                addMarker(i, markerData[i].lat, markerData[i].lng, markerData[i].label);
+            }
+        }
+
+        function addMarker(i, lat, lng, label) {
+            var markerLatLng = new google.maps.LatLng({
+                lat: lat,
+                lng: lng,
+            });
+            marker[i] = new google.maps.Marker({
+                position: markerLatLng,
+                map: map
+            });
+
+            var info = '<div style="font-size:18px;font-weight:bold;">' + label + '</div>';
+            infoWindow[i] = new google.maps.InfoWindow({
+                content: info
+            });
+
+            markerEvent(i);
+        }
+
+        function markerEvent(i) {
+            marker[i].addListener('click', function () {
+                if (windowOpened) {
+                    windowOpened.close();
+                }
+                infoWindow[i].open(map, marker[i]);
+                windowOpened = infoWindow[i];
+            });
+        }
+
+        function openWindow(i) {
+            if (windowOpened) {
+                windowOpened.close();
+            }
+            infoWindow[i].open(map, marker[i]);
+            windowOpened = infoWindow[i];
+        }
+
+        window.initMap = initMap;
+
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?language=zh-TW&region=zh-TW&key=AIzaSyDuGsDZbA_qhW_994yBcxGTwh7QssOqGEw&callback=initMap"
+        defer></script>
+
+</body>
+
+</html>
