@@ -55,6 +55,9 @@ import stockInfoInsetIconURL from "./stockInfo/stockInfo-small.png";
 import googleMapImage from "./googleMap/googleMap.png";
 import googleMapInsetIconURL from "./googleMap/googleMap-small.png";
 
+import dataMiningImage from "./dataMining/dataMining.png";
+import dataMiningInsetIconURL from "./dataMining/dataMining-small.png";
+
 import dataProcessingImage from "./dataProcessing/dataProcessing.png";
 import dataProcessingInsetIconURL from "./dataProcessing/dataProcessing-small.png";
 
@@ -112,8 +115,16 @@ import microbitMoreIconURL from "./microbitMore/entry-icon.png";
 import microbitMoreInsetIconURL from "./microbitMore/inset-icon.svg";
 import microbitMoreConnectionIconURL from "./microbitMore/connection-icon.svg";
 import microbitMoreConnectionSmallIconURL from "./microbitMore/connection-small-icon.svg";
+import webserialLinkit7697Image from "./webserialLinkit7697/webserialLinkit7697.png";
+import webserialLinkit7697InsetIconURL from "./webserialLinkit7697/webserialLinkit7697-small.png";
 import openaiImage from "./openai/openai.png";
 import openaiInsetIconURL from "./openai/openai-small.svg";
+
+import facemesh2scratchIconURL from "./facemesh2scratch/facemesh2scratch.png";
+import facemesh2scratchInsetIconURL from "./facemesh2scratch/facemesh2scratch-small.png";
+import handpose2scratchIconURL from "./handpose2scratch/handpose2scratch.png";
+import handpose2scratchInsetIconURL from "./handpose2scratch/handpose2scratch-small.png";
+
 const version = "v2-0.2.4";
 
 const translationMap = {
@@ -475,6 +486,31 @@ const extensions = [
   {
     name:(
       <FormattedMessage
+        defaultMessage="Data Mining"
+        description="Data Mining extension"
+        id="gui.extension.dataMining.title"
+      />
+    ),
+    extensionId: "dataMining",
+    collaborator: "TYiC",
+    iconURL: dataMiningImage,
+    insetIconURL: dataMiningInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Mining a large amount of data for knowledge exploration and using analytical models to evaluate and predict."
+        description="Mining a large amount of data for knowledge exploration and using analytical models to evaluate and predict."
+        id="gui.extension.dataMining.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    internetConnectionRequired: true,
+    useAutoScan: false,
+    helpLink: "https://github.com/estea8968/scratch3-internet",
+  },
+  {
+    name:(
+      <FormattedMessage
         defaultMessage="Data Processing"
         description="Data Processing extension"
         id="gui.extension.dataProcessing.title"
@@ -582,27 +618,6 @@ const extensions = [
     helpLink: "https://github.com/gasolin/scratch3-internet",
   },
   {
-    name: "Speech to Text",
-    extensionId: "voicetoTEXT",
-    collaborator: "estea chen",
-    iconURL: voicetotextImage,
-    insetIconURL: voicetotextInsetIconURL,
-    description: (
-      <FormattedMessage
-        defaultMessage="Convert speech to text."
-        description="Speech To Text extension"
-        id="gui.extension.voicetotext.description"
-      />
-    ),
-    featured: true,
-    disabled: false,
-    // bluetoothRequired: false,
-    internetConnectionRequired: false,
-    // launchPeripheralConnectionFlow: false,
-    useAutoScan: false,
-    helpLink: "https://github.com/estea8968/scratch3-internet",
-  },
-  {
     name: "URL & Text File",
     extensionId: "urlTXT",
     collaborator: "estea chen",
@@ -625,7 +640,13 @@ const extensions = [
   },
 
   {
-    name: "Google Sheets",
+    name:(
+      <FormattedMessage
+        defaultMessage="Google Sheets"
+        description="Google Sheets extension"
+        id="gui.extension.rwgoogle.title"
+      />
+    ),
     extensionId: "rwGoogle",
     collaborator: "estea chen, TYiC",
     iconURL: rwGoogleImage,
@@ -856,6 +877,47 @@ const extensions = [
     translationMap: translationMap,
   },
   {
+    name: "Web Serial Linkit7697",
+    extensionId: "webserialLinkit7697",
+    collaborator: "estea chen",
+
+    iconURL: webserialLinkit7697Image,
+    insetIconURL: webserialLinkit7697InsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Connect Linkit7697 and Google Chrome using Web Serial API."
+        description="Web serial for the Linkit7697 extension"
+        id="gui.extension.WebSerialLinkit7697.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    internetConnectionRequired: true,
+    bluetoothRequired: false,
+    helpLink: "https://sites.google.com/view/scratch-web-serial-api/",
+  },
+  {
+    name: "Speech to Text",
+    extensionId: "voicetoTEXT",
+    collaborator: "estea chen",
+    iconURL: voicetotextImage,
+    insetIconURL: voicetotextInsetIconURL,
+    description: (
+      <FormattedMessage
+        defaultMessage="Convert speech to text."
+        description="Speech To Text extension"
+        id="gui.extension.voicetotext.description"
+      />
+    ),
+    featured: true,
+    disabled: false,
+    // bluetoothRequired: false,
+    internetConnectionRequired: false,
+    // launchPeripheralConnectionFlow: false,
+    useAutoScan: false,
+    helpLink: "https://github.com/estea8968/scratch3-internet",
+  },
+  {
     name: "ML2Scratch",
     extensionId: "ml2scratch",
     collaborator: "champierre",
@@ -945,6 +1007,43 @@ const extensions = [
       },
     },
   },
+  {
+        name: "Facemesh2Scratch",
+        extensionId: "facemesh2scratch",
+        collaborator: "champierre",
+        iconURL: facemesh2scratchIconURL,
+        insetIconURL: facemesh2scratchInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage='Face Tracking'
+                description='Face Tracking'
+                id='gui.extension.facemesh2scratch.description'
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true,
+        bluetoothRequired: false
+    },
+    {
+        name: "Handpose2Scratch",
+        extensionId: "handpose2scratch",
+        collaborator: "champierre",
+        iconURL: handpose2scratchIconURL,
+        insetIconURL: handpose2scratchInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage='HandPose2Scratch Blocks.'
+                description='HandPose2Scratch Blocks.'
+                id='gui.extension.handpose2scratchblocks.description'
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true,
+        bluetoothRequired: false,
+        helpLink: 'https://champierre.github.io/handpose2scratch/'
+    },  
   {
     name: "OpenAI",
     extensionId: "openai",
